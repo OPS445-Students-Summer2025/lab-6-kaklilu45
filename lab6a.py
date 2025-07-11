@@ -31,9 +31,11 @@ class Student:
 
     # Return a list of course that the student passed (not a 0.0 grade)
     def displayCourses(self):
-        for grade in self.courses.values():
-            if grade > 0 or grade == None:
-                return list(self.courses.keys())
+        passedCourses = []
+        for course, grade in self.courses.items():
+            if grade > 0:
+                passedCourses.append(course)
+        return passedCourses
     
                 
 
